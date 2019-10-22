@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "VNETName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the VNET to add a subnet to"
+        }
+      },
+      "SubnetName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the subnet to add"
+        }
+      },
+      "SubnetAddressPrefix": {
+        "type": "string",
+        "metadata": {
+          "description": "Address space of the subnet to add"
+        }
+      },
+      "location": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+          "description": "Location for all resources."
+        }
+      }
+    },
+    "variables": {
+    },
+    "resources": [
+      {
+        "apiVersion": "2019-04-01",
+        "type": "Microsoft.Network/virtualNetworks/subnets",
+        "name": "[concat(parameters('VNETName'), '/', parameters('SubnetName'))]",
+        "location": "[parameters('location')]",
+        "properties": {
+          "addressPrefix": "[parameters('SubnetAddressPrefix')]"
+        }
+      }
+    ],
+    "outputs": {}
+  }
