@@ -83,7 +83,7 @@
                 }
             },
             "plan": {
-                "name": "byol",
+                "name": "hourly",
                 "publisher": "barracudanetworks",
                 "product": "waf"
             }
