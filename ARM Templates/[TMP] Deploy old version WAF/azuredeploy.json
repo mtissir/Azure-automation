@@ -60,8 +60,8 @@
                     "imageReference": {
                         "publisher": "barracudanetworks",
                         "offer": "waf",
-                        "sku": "byol",
-                        "version": "9.0.100602"
+                        "sku": "hourly",
+                        "version": "9.0.101101"
                     },
                     "osDisk": {
                         "createOption": "fromImage",
